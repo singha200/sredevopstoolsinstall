@@ -23,12 +23,15 @@ echo "Verifying the eksctl installation"
 eksctl version
 echo "eksctl installation complete"
 sleep 5
+echo "Starting the ansible installation"
+sudo yum install ansible -y
+echo "ansible installation completed"
+sleep 5 
 echo "Starting the terraform installation and configuration"
 wget https://releases.hashicorp.com/terraform/1.1.2/terraform_1.1.2_linux_amd64.zip
 unzip terraform_1.1.2_linux_amd64.zip
 sudo mv terraform /usr/local/bin
 terraform -install-autocomplete
-alias t='terraform'
 echo "Testing terraform installation"
 terraform -help
 echo "Terraform installation completed"
